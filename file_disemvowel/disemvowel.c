@@ -85,7 +85,7 @@ int main(int argc, char *argv[]) {
 
       default:
         printf("Too many parameters\n");
-        return 0;
+        return 1;
 
     }
 

@@ -5,6 +5,7 @@
 #include <dirent.h>
 #include <unistd.h>
 #include <string.h>
+#include <ftw.h>
 
 static int num_dirs, num_regular;
 
@@ -16,6 +17,7 @@ static int callback(const char *fpath, const struct stat *sb, int typeflag) {
     else if(typeflag == FTW_D) {
       num_dirs++;
     }
+    return 0;
 }
 
 #define MAX_FTW_DEPTH 16
